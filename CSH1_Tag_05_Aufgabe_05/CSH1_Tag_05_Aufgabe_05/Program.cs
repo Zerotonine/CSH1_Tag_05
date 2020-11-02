@@ -20,7 +20,6 @@ namespace CSH1_Tag_05_Aufgabe_05
             {
                 Console.Clear();
                 Console.WriteLine("Bitte Anzahl Schulen eingeben: ");
-                continue;
             } while (!Int32.TryParse(Console.ReadLine(), out schulen) || schulen < 1);
 
             string[][][] schulaufstellung = new string[schulen][][];
@@ -35,7 +34,6 @@ namespace CSH1_Tag_05_Aufgabe_05
                     Console.WriteLine($"Schule Nr. {i + 1}/{schulaufstellung.Length}");
                     Console.ForegroundColor = cc;
                     Console.WriteLine("Bitte Anzahl Klassen eingeben: ");
-                    continue;
                 } while (!Int32.TryParse(Console.ReadLine(), out klassen) || klassen < 1);
 
                 schulaufstellung[i] = new string[klassen][];
@@ -52,7 +50,6 @@ namespace CSH1_Tag_05_Aufgabe_05
                         Console.WriteLine($"Schule Nr. {i + 1}\tKlasse Nr. {j + 1}/{schulaufstellung[i].Length}");
                         Console.ForegroundColor = cc;
                         Console.WriteLine("Bitte Anzahl Schüler eingeben: ");
-                        continue;
                     } while (!Int32.TryParse(Console.ReadLine(), out schueler) || schueler < 1);
                     schulaufstellung[i][j] = new string[schueler];
                 }
@@ -71,9 +68,7 @@ namespace CSH1_Tag_05_Aufgabe_05
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.WriteLine($"Schule Nr. {i + 1}\tKlasse Nr. {j + 1}\tSchüler Nr. {k + 1}/{schulaufstellung[i][j].Length}");
                             Console.ForegroundColor = cc;
-
                             Console.WriteLine("Bitte Namen des Schülers eingeben: ");
-                            continue;
                         } while ((name = Console.ReadLine()) == "" || name == null);
 
                         schulaufstellung[i][j][k] = name;
