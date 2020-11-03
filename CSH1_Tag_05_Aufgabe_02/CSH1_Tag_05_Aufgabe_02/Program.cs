@@ -18,9 +18,10 @@ namespace CSH1_Tag_05_Aufgabe_02
 
             string[,] auslosungen = new string[10, 3]; //Row = Durchlauf; Column = Tipp, Losung, Treffer; 
 
+            FuelleLottoArray(ref tipp);
             do
             {
-                FuelleLottoArray(ref tipp);
+                
                 FuelleLottoArray(ref auslosung);
                 treffer = ZaehleTreffer(ref tipp, ref auslosung);
                 Array.Sort(tipp);
@@ -48,8 +49,6 @@ namespace CSH1_Tag_05_Aufgabe_02
                 Console.WriteLine($"Durchlauf Nr. {i+1}");
                 for(int j = 0; j < auslosungen.GetLength(1); j++)
                 {
-                    if (auslosungen[i, j] == null)
-                        break;
                     switch(j)
                     {
                         case 0:
